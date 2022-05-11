@@ -6,7 +6,7 @@ const Footer = () => {
             <span class="material-symbols-outlined">
                 copyright
             </span>
-            2022 WeSHOP
+            2022 TRAVELA
         </div>
     );
 }

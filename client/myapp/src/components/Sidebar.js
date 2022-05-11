@@ -1,11 +1,12 @@
 import React from 'react';
-import Login from '../components/Login';
+import Signup from './Signup';
 
 const Sidebar = () => {
     return (
     <div class="sidebar-container">
-        <p class="side-text">SIGN UP OR LOG IN TO SAVE AND CHECKOUT</p>
-        <Login />
+        <p class="side-text">YOUR ONE STOP SHOP TO TRAVEL PLANS</p>
+        <Signup />
+        <p class="login"><a class="login-link" href="https://www.google.com" alt="login-button">Click here to login</a></p>
     </div>
     );
 }

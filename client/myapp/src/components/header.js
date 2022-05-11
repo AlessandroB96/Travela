@@ -1,21 +1,29 @@
 import React from 'react';
-import cart from '../images/cart.svg';
+import compare from '../images/compare.svg';
+import search from '../images/search.svg';
+import flight from '../images/flight.svg';
 
 const Header = () => {
     return (
         <div class="header-container">
 
         <div class="logo">
-            WeSHOP
+            TRAVELA
         </div>
 
 
             <ul class="list-container">
-                <li><a href="https://www.google.com" class="btn">home</a></li>
-                <li><a href="https://www.google.com" class="btn">test</a></li>
-                <li><a href="https://www.google.com" class="btn">test</a></li>
-                <li><a href="https://www.google.com" class="btn">test</a></li>
-                <li><a href="https://www.google.com" class="btn2"><img src={cart} class="cart" alt="checkout cart"></img></a></li>
+                <li class="header">
+                    <a href="https://www.google.com" class="btn2">
+                        <img src={search} class="cart" alt="checkout cart"></img>
+                    </a>
+                </li>
+                <li class="header">
+                    <a href="https://www.google.com" class="btn2">
+                        <img src={flight} class="cart" alt="checkout cart"></img>
+                    </a>
+                </li>
+                <li><a href="https://www.google.com" class="btn2"><img src={compare} class="cart" alt="checkout cart"></img></a></li>
             </ul>
         </div>
     );
