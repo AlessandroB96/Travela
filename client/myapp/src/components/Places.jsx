@@ -13,13 +13,13 @@ const Places = () => {
                     <input type="text" name="search" id="search" className="searchbox" placeholder="search for a city..." />
 
                     <p className="recommended">RECOMMENDED SPOTS</p>
-                    {/* <ul>
+                    <ul>
                         <li>Spot 1</li>
                         <li>Spot 2</li>
                         <li>Spot 3</li>
                         <li>Spot 4</li>
                         <li>Spot 5</li>   
-                    </ul> */}
+                    </ul>
                 </div>
             </div>
             <div className="map-container">

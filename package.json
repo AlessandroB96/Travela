@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/AlessandroB96/MERNspa#readme",
   "dependencies": {
-    "apollo-server-express": "^3.7.0"
+    "apollo-server-express": "^3.7.0",
+    "google-map-react": "^2.1.10"
   }
 }
