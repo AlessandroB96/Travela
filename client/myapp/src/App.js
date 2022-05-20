@@ -8,18 +8,19 @@ function App() {
   return (
     <div>
 
-      <style>
+      {/* <style>
         @import url('https://fonts.googleapis.com/css2?family=Abel&family=Lobster&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
         <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
         <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-      </style>
+      </style> */}
         <Main />
-        <div class="main-container">
+        <div className="main-container">
           <Sidebar />
           <View />
         </div>
         <Footer />
+
     </div>
   );
 }

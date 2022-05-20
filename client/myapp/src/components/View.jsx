@@ -3,8 +3,8 @@ import Places from './Places';
 
 const View = () => {
     return (
-        <div class="main">
-            <div class="content-container">
+        <div className="main">
+            <div className="content-container">
                 <Places />
             </div>
         </div>

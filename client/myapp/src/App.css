@@ -216,6 +216,9 @@ input {
   font-family: 'Abel', sans-serif;
 }
 
+.searchbox {
+  height: 3vh;
+}
 
 
 .map-container {
@@ -223,6 +226,7 @@ input {
   margin-left: 2vw;
   border-radius: 8px;
   width: 46vw;
+  height: 69.8vh;
   background-color: rgba(113, 160, 199, 0.74);
 }
 
@@ -230,7 +234,7 @@ input {
   margin: 10px;
   width: 50vw;
   border: 2px solid black;
-  height: 66.8vh;
+  height: 67vh;
   background-color: transparent;
   border-radius: 8px;
 }
