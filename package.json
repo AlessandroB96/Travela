@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/AlessandroB96/MERNspa#readme",
   "dependencies": {
-    "apollo-server-express": "^3.7.0"
+    "apollo-server-express": "^3.7.0",
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.4"
   }
 }
