@@ -237,6 +237,7 @@ input {
   height: 67vh;
   background-color: transparent;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 
