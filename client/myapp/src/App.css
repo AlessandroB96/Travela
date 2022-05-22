@@ -1,3 +1,7 @@
+:root {
+  --main-font: 'Abel', sans-serif;
+}
+
 html {
   background-image: url("./images/WorldMap.svg");
 }
@@ -196,7 +200,7 @@ input {
 
 .places-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   background-color: rgba(113, 160, 199, 0.938);
   border-radius: 8px;
   height: 67.8vh;
@@ -205,15 +209,69 @@ input {
   padding: 10px;
 }
 
+.type-container {
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+  
+}
+
+.rating-container {
+  display: flex;
+  gap: 0.5vw;
+  align-items: center;
+}
+
+.type-title, .rating-title {
+  font-size: 1.4vw;
+  font-family: var(--main-font);
+
+}
+
+select {
+  width: 6vw;
+  height: 2.5vh;
+  font-family: var(--main-font);
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
 .entire-places {
   display: flex;
 }
 
 .place-header {
   display: flex;
-  font-size: 30px;
+  font-size: 1.6vw;
   margin: 0px;
   font-family: 'Abel', sans-serif;
+}
+
+.generated-places {
+  margin-top: 20px;
+  height:48vh;
+  overflow-y: scroll;
+  scrollbar-color: red yellow;
+}
+
+::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(37, 37, 37); 
+  border-radius: 7px;
+}
+
+.each-card {
+  margin-bottom: 40px;
+  margin-left: 0.6vw;
+}
+
+.place-title {
+  font-family: var(--main-font);
+  font-size: 25px;
 }
 
 .searchbox {
@@ -233,7 +291,8 @@ input {
 .map {
   margin: 10px;
   width: 50vw;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  box-shadow: 0px 0px 5px black;  
   height: 67vh;
   background-color: transparent;
   border-radius: 8px;
