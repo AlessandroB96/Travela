@@ -19,7 +19,7 @@ type Auth {
     image: String
     link: String
     type: String
-    rating: Number
+    rating: String
   }
   type Place {
     placeId: ID!
@@ -27,7 +27,7 @@ type Auth {
     image: String
     link: String
     Type: String
-    rating: Number
+    rating: String
   }
 type Mutation {
     login(email: String!, password: String!): Auth
