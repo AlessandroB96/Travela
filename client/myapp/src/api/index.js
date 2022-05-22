@@ -5,27 +5,31 @@ import {useQuery} from "react-query";
 
 const headers = {
   'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
-  'X-RapidAPI-Key': '2fbffc015fmshe96bdfb9099802fp104b86jsn692285c0ef60'
+  'X-RapidAPI-Key': process.env.REACT_APP_TRAVEL_PLACES_KEY
 }
 const useSearch = (searchTerm) => {
+  console.log({searchTerm})
   const params = {
     query: searchTerm ,
     lang: "en_US",
     units: "mi"
   }
-  const {isLoading, data} = useQuery("googs", () => {
-    return axios.get("https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete", {
+  const {isLoading, data} = useQuery(searchTerm, () =>  axios.get("https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete", {
       params,
       headers
-    }).then(res => res.data);
-  })
+    }, {enabled: searchTerm.length > 0, }).then(res => res.data), {
+      staleTime: 50
+    }
+  )
+
+  console.log({data})
 if(data !== undefined){
   console.log({data})
-  const arr = data.data.Typeahead_autocomplete.results.map(res => res.detailsV2).filter(value => value !== undefined)
+  const arr = data?.data?.Typeahead_autocomplete.results.map(res => res.detailsV2).filter(value => value !== undefined)
 
   return {data:arr, isLoading}
 } 
-  return {isLoading, data: []}
+  return {isLoading, data}
 }
 
 export {

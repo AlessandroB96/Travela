@@ -1,12 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import compare from '../images/compare.svg';
 import Search from '../images/search.svg';
 import flight from '../images/flight.svg';
+import {useSearch} from "../api"
+const Header = ({onSubmit}) => {
 
-const Header = () => {
-
-    const [search, setSearch] = useState('');
-
+    const [search, setSearch] = useState(undefined);
+    console.log({search})
+    const [input, setInput] = useState("")
+    const {isLoading, data}  = useSearch(search);
+    useEffect(() => {
+        if(data){
+            onSubmit(data)
+            console.log("Running")
+        }
+    }, [isLoading])
     return (
         <div className="header-container">
 
@@ -17,8 +25,11 @@ const Header = () => {
 
             <ul className="list-container">
                 <li className="header">
-                    <input type="text" name="search" id="search" className="search-input" placeholder="search..."  value={search} onChange={(event) => setSearch(event.target.value)}/>
-                    <button className="btn2">
+                    <input type="text" name="search" id="search" className="search-input" placeholder="search..."  value={input} onChange={(event) => setInput(event.target.value)}/>
+                    <button className="btn2" onClick={(e) => {
+                        e.preventDefault();
+                        setSearch(input)
+                    }}>
                         <img src={Search} className="cart" alt="search"></img>
                     </button>
                 </li>

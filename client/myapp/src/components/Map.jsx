@@ -3,9 +3,14 @@ import GoogleMapReact from 'google-map-react';
 
 
 
-function Map() {
+function Map({lats}) {
+    console.log({lats})
+    const firstCoord = lats?.[0]?.geocode;
+    console.log(firstCoord)
+    const coord = firstCoord ? {lat: firstCoord.latitude, lng: firstCoord.longitude} : {lat: 40.7812,lng: -73.9665}
+    const coordinates = coord;
 
-    const coordinates = {lat: 40.7812,lng: -73.9665};
+    console.log({coordinates})
     const API_KEY = process.env.REACT_APP_MAPSAPI_KEY
 
     return (

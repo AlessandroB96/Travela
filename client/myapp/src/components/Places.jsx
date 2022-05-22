@@ -3,12 +3,11 @@ import React, {useState} from 'react';
 import Map from './Map';
 import Card from './Card';
 import { useSearch } from '../api';
-const Places = () => {
+const Places = ({lats}) => {
 
     const [type, setType] = useState('hotels');
     const [rating, setRating] = useState('all');
-    const {isLoading, data}  = useSearch("london");
-    console.log({data})
+    console.log({lats})
 
     // const places = [
     //     {name: 'place1'},
@@ -56,9 +55,9 @@ const Places = () => {
 
                     <div className="generated-places">
                         {/* if there is no places, do not map array of values */}
-                    {isLoading && <b>loading...</b>}
+                    {!lats && <b>loading...</b>}
                     {
-                        data.map(info => <div>{info?.geocode?.latitude},{info?.geocode?.longitude}</div>)
+                        lats && lats.map(info => <div>{info?.geocode?.latitude},{info?.geocode?.longitude}</div>)
                     }
 
                     </div>
@@ -74,7 +73,7 @@ const Places = () => {
                 </div>
             </div>
             <div className="map-container">
-                <Map />
+                <Map lats={lats}/>
             </div>
                         
         </div>

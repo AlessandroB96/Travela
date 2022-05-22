@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Signup = () => {
+const Signup = ({onLogin}) => {
     
     return (
 
@@ -20,6 +20,11 @@ const Signup = () => {
             <label htmlFor="password" className="c-label">PASSWORD: </label>
             <input type="password" name="password" id="password" className="password-input" />
         </div>
+        <button className="login-link" href="https://www.google.com" alt="login-button" onClick={(e) => {
+            e.preventDefault();
+            onLogin(true)
+            }}>Click here to login</button>
+
     </div>
     </form>
     );
