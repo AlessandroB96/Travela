@@ -2,25 +2,27 @@ import React, {useState} from 'react';
 // import { Autocomplete } from '@react-google-maps/api';
 import Map from './Map';
 import Card from './Card';
-
+import { useSearch } from '../api';
 const Places = () => {
 
     const [type, setType] = useState('hotels');
     const [rating, setRating] = useState('all');
+    const {isLoading, data}  = useSearch("london");
+    console.log({data})
 
-    const places = [
-        {name: 'place1'},
-        {name: 'place2'},
-        {name: 'place3'},
-        {name: 'place4'},
-        {name: 'place5'},
-        {name: 'place6'},
-        {name: 'place7'},
-        {name: 'place8'},
-        {name: 'place9'},
-        {name: 'place10'},
+    // const places = [
+    //     {name: 'place1'},
+    //     {name: 'place2'},
+    //     {name: 'place3'},
+    //     {name: 'place4'},
+    //     {name: 'place5'},
+    //     {name: 'place6'},
+    //     {name: 'place7'},
+    //     {name: 'place8'},
+    //     {name: 'place9'},
+    //     {name: 'place10'},
 
-    ]
+    // ]
 
     return (
         <div className="entire-places">
@@ -54,11 +56,11 @@ const Places = () => {
 
                     <div className="generated-places">
                         {/* if there is no places, do not map array of values */}
-                        {places?.map((place) => (
-                            <div className="each-card">
-                                <Card place={place}/>
-                            </div>
-                        ))}
+                    {isLoading && <b>loading...</b>}
+                    {
+                        data.map(info => <div>{info?.geocode?.latitude},{info?.geocode?.longitude}</div>)
+                    }
+
                     </div>
 
                     {/* <p className="recommended">RECOMMENDED SPOTS</p>

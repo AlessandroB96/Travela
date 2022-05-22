@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import compare from '../images/compare.svg';
-import search from '../images/search.svg';
+import Search from '../images/search.svg';
 import flight from '../images/flight.svg';
 
 const Header = () => {
+
+    const [search, setSearch] = useState('');
+
     return (
         <div className="header-container">
 
@@ -14,9 +17,10 @@ const Header = () => {
 
             <ul className="list-container">
                 <li className="header">
-                    <a href="https://www.google.com" className="btn2">
-                        <img src={search} className="cart" alt="checkout cart"></img>
-                    </a>
+                    <input type="text" name="search" id="search" className="search-input" placeholder="search..."  value={search} onChange={(event) => setSearch(event.target.value)}/>
+                    <button className="btn2">
+                        <img src={Search} className="cart" alt="search"></img>
+                    </button>
                 </li>
                 <li className="header">
                     <a href="https://www.google.com" className="btn2">

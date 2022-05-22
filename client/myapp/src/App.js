@@ -3,17 +3,21 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import View from './components/View';
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import axios from "axios";
+import { useState } from 'react';
+
+const qc = new QueryClient();
 
 function App() {
-  return (
-    <div>
 
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Abel&family=Lobster&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
-        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-      </style>
+  const [isLoggedin, setIsloggedIn] = useState(false); 
+  
+  return (
+
+    <QueryClientProvider client={qc}>
+
+    <div>
         <Main />
         <div className="main-container">
           <Sidebar />
@@ -22,6 +26,7 @@ function App() {
         <Footer />
 
     </div>
+    </QueryClientProvider>
   );
 }
 
