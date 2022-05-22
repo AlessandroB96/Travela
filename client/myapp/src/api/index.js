@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import {useQuery} from '@apollo/client';
+import {useQuery} from 'react-query';
 
 
 const headers = {
