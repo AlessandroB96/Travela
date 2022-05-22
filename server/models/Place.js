@@ -1,25 +1,37 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { Schema } = require('mongoose');
 
-// TODO implement places schema
+// This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
+const placeSchema = new Schema({
+  
+  name: {
+    type: String,
+    required: true,
+  },
+  // saved place id from GoogleMaps
+  placeId: {
+    type: String,
+    required: true,
+  },
+//Location, Restaurant, Museum, Nature, Hotel...
+  type:
+  {
+      type: String,
+  },
 
-const placeSchema = new Schema(
-    {
-        name: {
-            type: String,
-            required: true
-        },
-        location: {
-            type: String,
-            required: true
-        },
-        image: {
-            type: String
-        }
-    },
-    {
-        timestamps: true
-    }
-);
+  image: {
+    type: String,
+  },
+  link: {
+    type: String,
+  },
 
-module.exports = mongoose.model("Place", placeSchema);
+  rating:
+  {
+      type: Number,
+
+  },
+
+
+});
+
+module.exports = placeSchema;

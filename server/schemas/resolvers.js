@@ -38,8 +38,34 @@ const resolvers = {
         return { token, user };
       },
 
+      savePlace: async (parent, { newPlace }, context) => {
+        if (context.user) {
+          const updatedUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $push: { savedPlaces: newPlace }},
+            { new: true }
+          );
+          return updatedUser;
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
+
+      removePlace: async (parent, { placeId }, context) => {
+        if (context.user) {
+          const updatedUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $pull: { savedPlaces: { placeId }}},
+            { new: true }
+          );
+          return updatedUser;
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
+  
+
     },
 
+    
 };
 
 module.exports = resolvers;
