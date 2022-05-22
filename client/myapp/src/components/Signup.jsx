@@ -6,6 +6,10 @@ import Auth from '../utils/auth';
 
 
 const Signup = (props) => {
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+    };
 
     const {
         loginSelected,
@@ -66,7 +70,13 @@ const Signup = (props) => {
                         SIGNUP
                     </button>
                 </div>
-                <p className="login"><a className="login-link " alt="login-button" onClick={() => setLoginSelected(true)}>Click here to login</a></p>
+                {Auth.loggedIn() ? (               
+                    <a href="/" onClick={logout}>
+                    Logout
+                    </a> 
+                ) : (
+                    <p className="login"><a className="login-link" alt="login-button" onClick={() => setLoginSelected(true)}>Click here to login</a></p> 
+                )}
             </form>
             {error && <div className="sign-up-heading">Signup failed</div>}
         </div>
