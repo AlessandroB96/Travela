@@ -48,7 +48,7 @@ const Signup = (props) => {
         };
     
     return (
-        <div>
+        <div className="form-container">
             <form className="form" action="" method="post" onSubmit={handleFormSubmit}>
 
                 <h1 className="sign-up-heading">LOGIN</h1>

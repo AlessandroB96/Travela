@@ -5,9 +5,8 @@ import GoogleMapReact from 'google-map-react';
 
 function Map({lats}) {
     console.log({lats})
-    const firstCoord = lats?.[0]?.geocode;
-    console.log(firstCoord)
-    const coord = firstCoord ? {lat: firstCoord.latitude, lng: firstCoord.longitude} : {lat: 40.7812,lng: -73.9665}
+
+    const coord = lats ? lats : {lat: 40.7812,lng: -73.9665}
     const coordinates = coord;
 
     console.log({coordinates})

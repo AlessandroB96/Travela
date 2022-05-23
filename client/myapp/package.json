@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "@apollo/client": "^3.3.16",
+    "@apollo/client": "^3.6.4",
     "@react-google-maps/api": "^2.10.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.1.0",
@@ -12,7 +12,7 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "google-map-react": "^2.1.10",
-    "graphql": "^16.4.0",
+    "graphql": "^16.5.0",
     "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

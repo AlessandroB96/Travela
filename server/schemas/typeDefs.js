@@ -10,8 +10,23 @@ type Auth {
     token: ID!
     user: User
   }
+
+
+
+  # Latitutdes and longituteds are floating point values
+  type Location {
+    lat: Float!
+    lng: Float!
+  }
+
+  input LocationInput {
+    lat: Float!
+    lng: Float!
+  }
   type Query {
     me: User
+    places(location: LocationInput!, radius: Int!, keyword: String): [Place]!
+    searchPlace(searchTerm: String!): Location!
   }
   input InputPlace {
     placeId: String
@@ -26,8 +41,9 @@ type Auth {
     name: String
     image: String
     link: String
-    Type: String
-    rating: String
+    types: [String]
+    rating: Float
+    location: Location!
   }
 type Mutation {
     login(email: String!, password: String!): Auth

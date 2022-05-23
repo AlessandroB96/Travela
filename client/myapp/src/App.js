@@ -10,7 +10,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { useState } from 'react';
-import { useSearch } from './api';
 import Header from './components/header';
 import { setContext } from '@apollo/client/link/context';
 
