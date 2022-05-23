@@ -1,14 +1,13 @@
 import './App.css';
-import Main from './components/Main';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import View from './components/View';
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import axios from "axios";
-import { useState } from 'react';
-import { useSearch } from './api';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header';
 import { ReactQueryDevtools } from "react-query/devtools";
+import { usePlacesData } from './api';
 
 const qc = new QueryClient();
 const Wrapper = ({children}) => {
@@ -21,6 +20,17 @@ const Wrapper = ({children}) => {
 } 
 function App() {
 
+  const [places, setPlaces] = useState([]);
+  const [coordinate, setCoordinates] = useState({});
+  const [bounds, setBounds] = useState(null);
+
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(({ coords: {latitude, longitude }}) => {
+  //     setCoordinates({ lat: latitude, lng: longitude })
+  //   })
+  // }, [])
+
+
   const [isLoggedin, setIsloggedIn] = useState(false); 
   const [lats, setLats] = useState([])
   return (
@@ -32,7 +42,12 @@ function App() {
 
         <div className="main-container">
           {!isLoggedin && <Sidebar onLogin={setIsloggedIn}/>}
-          <View lats={lats}/>
+          <View 
+            lats={lats}
+            // setCoordinates={setCoordinates}
+            // setBounds={setBounds}
+            // coordinates={coordinate}
+            />
         </div>
         <Footer />
 

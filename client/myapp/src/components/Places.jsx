@@ -1,13 +1,21 @@
 import React, {useState} from 'react';
 // import { Autocomplete } from '@react-google-maps/api';
 import Map from './Map';
-import Card from './Card';
-import { useSearch } from '../api';
+import { usePlacesData } from '../api';
+
+
+
 const Places = ({lats}) => {
+
+
 
     const [type, setType] = useState('hotels');
     const [rating, setRating] = useState('all');
+    const [bounds, setBounds] = useState(undefined);
     console.log({lats})
+    const {data, isLoading} = usePlacesData(bounds)
+    console.table(data)
+    console.log({isLoading,data})
 
     // const places = [
     //     {name: 'place1'},
@@ -59,7 +67,7 @@ const Places = ({lats}) => {
                     {
                         lats && lats.map(info => <div>{info?.geocode?.latitude},{info?.geocode?.longitude}</div>)
                     }
-
+                    {bounds && JSON.stringify(bounds)}
                     </div>
 
                     {/* <p className="recommended">RECOMMENDED SPOTS</p>
@@ -73,7 +81,10 @@ const Places = ({lats}) => {
                 </div>
             </div>
             <div className="map-container">
-                <Map lats={lats}/>
+                <Map 
+                lats={lats}
+                    onChangeBounds={setBounds}
+                />
             </div>
                         
         </div>

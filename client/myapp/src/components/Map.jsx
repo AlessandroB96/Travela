@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 
 
 
-function Map({lats}) {
+function Map({lats, onChangeBounds}) {
     console.log({lats})
     const firstCoord = lats?.[0]?.geocode;
     console.log(firstCoord)
@@ -20,6 +20,10 @@ function Map({lats}) {
                 defaultCenter={coordinates}
                 center={coordinates}
                 defaultZoom={12}
+                onChange={(event) => {
+                    console.log('event', event);
+                    onChangeBounds(event.bounds)
+                }}
             >
 
             </GoogleMapReact>
