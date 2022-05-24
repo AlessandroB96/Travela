@@ -36,16 +36,16 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [isLoggedin, setIsloggedIn] = useState(false); 
+  const [loginSelected, setLoginSelected] = useState(false);
   const loggedIn = Auth.loggedIn()
   const [lats, setLats] = useState([])
   const [toggleMap, setToggleMap] = useState(true);
   const [toggleItinerary, setToggleItinerary] = useState(false);
 
-  const logout = event => {
-    event.preventDefault();
-    Auth.logout();
-};
+//   const logout = event => {
+//     event.preventDefault();
+//     Auth.logout();
+// };
 
   const toggleMapVisible = () => {
     setToggleMap(true);
@@ -62,12 +62,16 @@ function App() {
       <ApolloProvider client={client}>
 
             <Header onSubmit={setLats} toggleMapVisible={toggleMapVisible} toggleItineraryVisible={toggleItineraryVisible} />
-            {loggedIn  &&               
+            {/* {loggedIn  &&               
                     <a href="/" onClick={logout}>
                     Logout
-                    </a> }
+                    </a> } */}
               <div className="main-container">
-                {!loggedIn && <Sidebar />}
+                {
+                  !loggedIn && <Sidebar
+                  loginSelected={loginSelected}
+                  setLoginSelected={setLoginSelected}/>
+                }
                 {toggleMap ? <View lats={lats}/> : null}
               </div>
             <Footer />
