@@ -1,3 +1,7 @@
+:root {
+  --main-font: 'Abel', sans-serif;
+}
+
 html {
   background-image: url("./images/WorldMap.svg");
 }
@@ -5,9 +9,9 @@ html {
 
 .header-container {
   display: flex;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 3vh;
+  margin-left: 1.3vw;
+  margin-right: 1.3vw;
   height: 5vh;
   justify-content: space-between;
   vertical-align: baseline;
@@ -18,8 +22,20 @@ html {
   background-color: rgb(113, 160, 199);
 }
 
+.search-input {
+  font-family: var(--main-font);
+  font-weight: bolder;
+}
+
+
+.searchbtn {
+  margin: none;
+  background-color: transparent;
+  border: none;
+}
+
 .logo {
-  margin-left: 20px;
+  margin-left: 1.5vw;
   font-size: 60px;
   font-family: 'Zen Loop', cursive;
   font-weight: 900;
@@ -29,13 +45,16 @@ html {
 
 .list-container {
   display: flex;
-  gap: 40px;
+  gap: 3vw;
   justify-content: flex-end;
   list-style: none;
 }
 
-.btn {
+.btn  {
   text-decoration: none;
+  background-color: white;
+  border-radius: 8px;
+  border: none;
   color: black;
   font-size: 20px;
   font-family: 'Abel', sans-serif;
@@ -57,36 +76,42 @@ html {
 .cart {
   width: 60%;
   transition: 0.4s;
-
+  border: none;
+  background-color: transparent;
 }
+
+.itinerary-btn {
+  border: none;
+  background-color: transparent;
+}
+
 
 .cart:hover {
   filter:  brightness(0) invert(1);
   transition: 0.4s;
+  cursor: pointer;
+}
+
+.main-container {
+  display: flex;
 }
 
 .sidebar-container {
-  margin-left: 25px;
-  margin-top: 25px;
+  margin-left: 1.3vw;
+  margin-top: 3vh;
   display: flex;
-  flex-direction: column;
-  width: 25%;
-  height: 68vh;
+  width: 25vw;
+  height: 70vh;
   background-color: rgba(113, 160, 199, 0.938);
   border-radius: 8px;
-  padding: 15px;
+
 }
 
-#close {
+.sidebar {
   display: flex;
-  width: 5%;
-  transition: 0.4s;
-}
-
-#close:hover {
-  color: white;
-  transition: 0.4s;
-  cursor: pointer;
+  flex-direction: column;
+  margin: auto;
+  padding: 15px;
 }
 
 .side-text {
@@ -118,19 +143,19 @@ html {
 
 .username-container {
   display: flex;
-  gap: 30px;
+  gap: 3.4vw;
   font-size: 25px;
 }
 
 .email-container {
   display: flex;
-  gap: 80px;
+  gap: 6.7vw;
   font-size: 25px;
 }
 
 .password-container {
   display: flex;
-  gap: 29px;
+  gap: 3.3vw;
   font-size: 25px;
 }
 
@@ -142,6 +167,7 @@ html {
 }
 
 input {
+  display: flex;
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -157,6 +183,8 @@ input {
 }
 
 .login-link {
+  margin-bottom: 3vh;
+  display: flex;
   text-decoration: none;
   color: black;
   transition: 0.4s;
@@ -167,15 +195,27 @@ input {
   color: white;
 }
 
+/* MAIN */
+
+.main {
+  display: flex;
+  background-color: transparent;
+  border-radius: 8px;
+  height: 65vh;
+  width: 69vw;
+  margin-top: 3vh;
+  margin-left: 1vw;
+}
+
 .footer-container {
   display: flex;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 3vh;
+  margin-left: 1.3vw;
+  margin-right: 1.3vw;
   justify-content: flex-end;
   vertical-align: baseline;
   border: none;
-  height: 3vh;
+  height: 4vh;
   border-radius: 8px;
   align-items: center;
   padding: 20px;
@@ -184,6 +224,183 @@ input {
   font-size: 25px;
 }
 
+.places-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(113, 160, 199, 0.938);
+  border-radius: 8px;
+  height: 67.8vh;
+  width: 20vw;
+  margin-left: 1vw;
+  padding: 10px;
+}
+
+.type-container {
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+  
+}
+
+.rating-container {
+  display: flex;
+  gap: 0.5vw;
+  align-items: center;
+}
+
+.type-title, .rating-title {
+  font-size: 1.4vw;
+  font-family: var(--main-font);
+
+}
+
+select {
+  width: 6vw;
+  height: 2.5vh;
+  font-family: var(--main-font);
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.entire-places {
+  display: flex;
+}
+
+.place-header {
+  display: flex;
+  font-size: 1.6vw;
+  margin: 0px;
+  font-family: 'Abel', sans-serif;
+}
+
+.loading {
+  font-size: 20px;
+  font-family: var(--main-font);
+  color: white;
+}
+
+.generated-places {
+  margin-top: 20px;
+  height: 60vh;
+  border-radius: 5px;
+  overflow-y: scroll;
+  scrollbar-color: red yellow;
+}
+
+.placeurl {
+  text-decoration: none;
+  color: black;
+}
+
+.card {
+  background-color: rgb(241, 241, 241);
+  margin-bottom: 10px;
+  margin-right: 0.5vw;
+  border-radius: 3px;
+  font-family: var(--main-font);
+}
+
+.material-symbols-outlined {
+  color: rgb(51, 180, 255);
+  transition: 0.6s;
+}
+
+.material-symbols-outlined:hover {
+  cursor: pointer;
+  filter: blur(0.9px);
+  filter: hue-rotate(3.142rad);
+}
+
+.material-symbols-outlined:active {
+  color: rgb(51, 180, 255);
+  transition: 0.6s;
+  filter: saturate(4);
+}
+
+.star {
+  background-color: transparent;
+  border: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  font-family: var(--main-font);
+  font-size: 15px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: none;
+  margin: 2px;
+  background-color:rgb(250, 231, 60)
+  
+}
+
+.places-name {
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.rating {
+  padding-left: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(37, 37, 37); 
+  border-radius: 7px;
+}
+
+.each-card {
+  margin-bottom: 40px;
+  margin-left: 0.6vw;
+}
+
+.place-title {
+  font-family: var(--main-font);
+  font-size: 25px;
+}
+
+.searchbox {
+  height: 3vh;
+}
+
+
+.map-container {
+  display: flex;
+  margin-left: 2vw;
+  border-radius: 8px;
+  width: 46vw;
+  height: 69.8vh;
+  background-color: rgba(113, 160, 199, 0.74);
+}
+
+.map {
+  margin: 10px;
+  width: 50vw;
+  box-shadow: 0px 0px 5px black;  
+  height: 67vh;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.saved-places-title {
+  display: flex;
+  justify-content: center;
+  font-family: var(--main-font);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
 
 @media screen and (max-width: 715px) {
   .header-container {
