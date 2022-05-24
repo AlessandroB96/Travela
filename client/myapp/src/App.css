@@ -96,6 +96,11 @@ html {
   display: flex;
 }
 
+.content-container {
+  display: flex;
+  gap: 1.5vw
+}
+
 .sidebar-container {
   margin-left: 1.3vw;
   margin-top: 3vh;
@@ -209,7 +214,6 @@ input {
 
 .footer-container {
   display: flex;
-  margin-top: 3vh;
   margin-left: 1.3vw;
   margin-right: 1.3vw;
   justify-content: flex-end;
@@ -222,6 +226,10 @@ input {
   background-color: rgb(113, 160, 199);
   font-family: 'Abel', sans-serif;
   font-size: 25px;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 3vh;
+  min-width: 94%;
 }
 
 .places-container {
@@ -230,8 +238,8 @@ input {
   background-color: rgba(113, 160, 199, 0.938);
   border-radius: 8px;
   height: 67.8vh;
-  width: 20vw;
-  margin-left: 1vw;
+  width: 22vw;
+  margin-left: 0.3vw;
   padding: 10px;
 }
 
@@ -270,7 +278,7 @@ select {
 .place-header {
   display: flex;
   font-size: 1.6vw;
-  margin: 0px;
+  margin: 0vw;
   font-family: 'Abel', sans-serif;
 }
 
@@ -281,7 +289,7 @@ select {
 }
 
 .generated-places {
-  margin-top: 20px;
+  margin-top: 2.7vh;
   height: 60vh;
   border-radius: 5px;
   overflow-y: scroll;
@@ -295,7 +303,7 @@ select {
 
 .card {
   background-color: rgb(241, 241, 241);
-  margin-bottom: 10px;
+  margin-bottom: 1.5vh;
   margin-right: 0.5vw;
   border-radius: 3px;
   font-family: var(--main-font);
@@ -344,11 +352,12 @@ select {
 .places-name {
   font-size: 22px;
   font-weight: bold;
-  padding-left: 5px;
+  padding-left: 0.4vw;
+  padding-top: 0.4vw;
 }
 
 .rating {
-  padding-left: 5px;
+  padding-left: 0.4vw;
 }
 
 ::-webkit-scrollbar {
@@ -361,7 +370,7 @@ select {
 }
 
 .each-card {
-  margin-bottom: 40px;
+  margin-bottom: 3vh;
   margin-left: 0.6vw;
 }
 
@@ -394,12 +403,33 @@ select {
   overflow: hidden;
 }
 
+.test {
+  display: flex;
+  gap: 4.2vw;
+}
+
 .saved-places-title {
   display: flex;
   justify-content: center;
   font-family: var(--main-font);
-  margin-bottom: 10px;
+  margin-bottom: 2.3vh;
   font-size: 20px;
+}
+
+#copyright {
+  color: black;
+}
+
+#copyright:hover {
+  filter: none;
+  filter: none;
+  cursor: default;
+}
+
+#trash:hover {
+  filter: none;
+  filter: none;
+  color: red;
 }
 
 @media screen and (max-width: 715px) {

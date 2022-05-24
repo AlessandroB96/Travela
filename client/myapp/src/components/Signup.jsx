@@ -13,7 +13,8 @@ const Signup = (props) => {
 
     const {
         loginSelected,
-        setLoginSelected
+        setLoginSelected,
+        setIsLoggedIn
     } = props;
 
         const [formState, setFormState] = useState({
@@ -35,14 +36,15 @@ const Signup = (props) => {
         
         // submit form
         const handleFormSubmit = async (event) => {
+            
             event.preventDefault();
-        
             try {
-            const { data } = await addUser({
-                variables: { ...formState },
+                const { data } = await addUser({
+                    variables: { ...formState },
             });
         
             Auth.login(data.addUser.token);
+            setIsLoggedIn(true);
             } catch (e) {
             console.error(e);
             }

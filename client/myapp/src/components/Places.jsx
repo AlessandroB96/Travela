@@ -1,13 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import Map from './Map';
-import Itinerary from './Itinerary';
 import {GET_PLACES, SAVE_PLACE} from "../graphql/places"
 
 const Places = ({lats, toggleItinerary}) => {
 
-    const [type, setType] = useState('hotels');
-    const [rating, setRating] = useState('all');
     const {data, loading } = useQuery(GET_PLACES, {
         variables : {
             lat: lats.lat,
@@ -32,7 +29,7 @@ const Places = ({lats, toggleItinerary}) => {
                     {loading && <b className="loading">Loading...</b>}
                     {places.map((p) => (
                     <div className="card">
-                        <div className="places-name"><a href="https://www.google.com" className="placeurl">{p.name}</a></div>
+                        <div className="places-name">{p.name}</div>
                         <div className="rating">{p.rating && <i>{p.rating} Stars</i>}</div>
                         <div className="button-container">
                         <button onClick={e => {
@@ -60,7 +57,7 @@ const Places = ({lats, toggleItinerary}) => {
             <div className="map-container">
                 <Map lats={lats}/>
             </div>
-         <Itinerary /> 
+         {/* <Itinerary />  */}
                         
         </div>
     );

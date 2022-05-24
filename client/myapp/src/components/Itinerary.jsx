@@ -25,8 +25,8 @@ const Itinerary = () => {
                 {savedPlaces.map((savedPlace) => {
                     return(
                     <div className="card">
-                        <div className="places-name"><a href="https://www.google.com" className="placeurl">{savedPlace.name}</a></div>
-                        <div className="rating">{savedPlace.rating}</div>
+                        <div className="places-name">{savedPlace.name}</div>
+                        <div className="rating">{savedPlace.rating} <i>Stars</i></div>
                         <div className="button-container">
                         <button onClick={e => {
                             e.preventDefault();
@@ -35,7 +35,7 @@ const Itinerary = () => {
                             }
                             })
                         }} className="star">
-                        <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined" id="trash">
                             delete
                         </span>
                         </button>

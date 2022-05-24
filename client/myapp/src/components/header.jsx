@@ -29,7 +29,7 @@ const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
 
             <ul className="list-container">
                 <li className="header">
-                    <input type="text" name="search" id="search" className="search-input" placeholder="search..."  value={input} onChange={(event) => setInput(event.target.value)}/>
+                    <input type="text" name="search" id="search" className="search-input" placeholder="search city..."  value={input} onChange={(event) => setInput(event.target.value)}/>
                     <button disabled={isLoading} className="searchbtn" onClick={(e) => {
                         e.preventDefault();
                         setSearch(input);
