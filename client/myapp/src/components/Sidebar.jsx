@@ -4,7 +4,7 @@ import Login from './Login';
 
 
 const Sidebar = (props) => {
-   
+
     const {
         loginSelected,
         setLoginSelected
@@ -19,7 +19,6 @@ const Sidebar = (props) => {
                 
                 loginSelected={loginSelected}
                 setLoginSelected={setLoginSelected}
-                setIsLoggedIn={setIsLoggedIn}
             />
             ) : (
             <Login 
