@@ -40,7 +40,7 @@ const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
                 </li>
 
                 <li>
-                    <button className="btn2" className="itinerary-btn" onClick={(e) => {
+                    <button className="btn2 itinerary-btn" onClick={(e) => {
                         e.preventDefault();
                         toggleItineraryVisible(true);
 
