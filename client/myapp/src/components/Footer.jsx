@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div class="footer-container">
-            <span class="material-symbols-outlined">
+        <div className="footer-container">
+            <span className="material-symbols-outlined" id="copyright">
                 copyright
             </span>
             2022 TRAVELA
