@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import compare from '../images/compare.svg';
-import search from '../images/search.svg';
-import flight from '../images/flight.svg';
+import Search from '../images/search.svg';
+import {useQuery} from "@apollo/client"
+import { GET_SEARCH } from '../graphql/searchTerm';
+// import {useSearch} from "../api"
+const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
 
-const Header = () => {
+    const [search, setSearch] = useState("");
+    const [input, setInput] = useState("");
+    // const {isLoading, data}  = useSearch(search);
+    const {isLoading} = useQuery(GET_SEARCH, {
+        variables: {
+            searchTerm: search
+        },
+        skip: search.length === 0,
+        onCompleted: (data) => {
+            onSubmit(data.searchPlace)
+        }
+    });
+
     return (
         <div className="header-container">
 
@@ -14,16 +29,25 @@ const Header = () => {
 
             <ul className="list-container">
                 <li className="header">
-                    <a href="https://www.google.com" className="btn2">
-                        <img src={search} className="cart" alt="checkout cart"></img>
-                    </a>
+                    <input type="text" name="search" id="search" className="search-input" placeholder="search..."  value={input} onChange={(event) => setInput(event.target.value)}/>
+                    <button disabled={isLoading} className="searchbtn" onClick={(e) => {
+                        e.preventDefault();
+                        setSearch(input);
+                        toggleMapVisible(true);
+                    }}>
+                        <img src={Search} className="cart" alt="search"></img>
+                    </button>
                 </li>
-                <li className="header">
-                    <a href="https://www.google.com" className="btn2">
-                        <img src={flight} className="cart" alt="checkout cart"></img>
-                    </a>
+
+                <li>
+                    <button className="btn2" className="itinerary-btn" onClick={(e) => {
+                        e.preventDefault();
+                        toggleItineraryVisible(true);
+
+
+                    }}>
+                    <img src={compare} className="cart" alt="checkout cart"></img></button>
                 </li>
-                <li><a href="https://www.google.com" className="btn2"><img src={compare} className="cart" alt="checkout cart"></img></a></li>
             </ul>
         </div>
     );

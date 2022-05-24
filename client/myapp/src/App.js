@@ -1,14 +1,18 @@
 import './App.css';
-import Main from './components/Main';
+// import Main from './components/Main';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import View from './components/View';
+import Places from './components/Places';
+
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+import { useState } from 'react';
+import Header from './components/header';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
@@ -31,22 +35,32 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [isLoggedin, setIsloggedIn] = useState(false); 
+  const [lats, setLats] = useState([])
+  const [toggleMap, setToggleMap] = useState(true);
+  const [toggleItinerary, setToggleItinerary] = useState(false);
+
+  const toggleMapVisible = () => {
+    setToggleMap(true);
+}
+
+  const toggleItineraryVisible = () => {
+    setToggleItinerary(true);
+  }
+
   return (
     <div>
 
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Abel&family=Lobster&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
-        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-        <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-      </style>
+
       <ApolloProvider client={client}>
-        <Main />
-        <div className="main-container">
-          <Sidebar />
-          <View />
-        </div>
-        <Footer />
+
+            <Header onSubmit={setLats} toggleMapVisible={toggleMapVisible} toggleItineraryVisible={toggleItineraryVisible} />
+
+              <div className="main-container">
+                {!isLoggedin && <Sidebar onLogin={setIsloggedIn}/>}
+                {toggleMap ? <View lats={lats}/> : null}
+              </div>
+            <Footer />
       </ApolloProvider>
 
     </div>

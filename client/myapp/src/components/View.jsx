@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Places from './Places';
 
-const View = () => {
+
+const View = ({lats}) => {
+    
+
+
     return (
         <div className="main">
             <div className="content-container">
-                <Places />
+                <Places lats={lats}/>
+                
             </div>
         </div>
     );

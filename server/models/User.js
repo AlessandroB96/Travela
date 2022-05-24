@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 // import schema from Place.js
@@ -25,11 +25,11 @@ const userSchema = new Schema(
     savedPlaces: [placeSchema],
   },
 //   set this to use virtual below
- {
-   toJSON: {
-     virtuals: true,
-   },
-  }
+  {
+    toJSON: {
+      virtuals: true,
+    },
+    }
 );
 
 // hash user password
