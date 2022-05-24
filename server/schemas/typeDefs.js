@@ -27,14 +27,15 @@ type Auth {
     me: User
     places(location: LocationInput!, radius: Int!, keyword: String): [Place]!
     searchPlace(searchTerm: String!): Location!
+    savedPlaces: [Place]!
   }
   input InputPlace {
-    placeId: String
-    name: String
+    placeId: String!
+    name: String!
     image: String
     link: String
     type: String
-    rating: String
+    rating: Float
   }
   type Place {
     placeId: ID!
@@ -48,8 +49,8 @@ type Auth {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    savePlace(newBook: InputPlace!): User
-    removePlace(placeId: ID!): User
+    savePlace(newPlace: InputPlace!): Place
+    removePlace(placeId: String!): String
   }
 `;
 

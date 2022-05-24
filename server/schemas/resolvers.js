@@ -21,6 +21,16 @@ const resolvers = {
         const {searchTerm} = args;
         const result = await searchPlaceName(searchTerm)
         return result
+      },
+      savedPlaces: async (parent, args, context) => {
+        if(context.user) {
+          const userData = await User.findOne({ _id: context.user._id }).select('-__v -password')
+          if(!userData) {
+            return null
+          }
+          return userData.savedPlaces;
+        }
+        throw new AuthenticationError("You need to be logged in! 💩")
       }
     },
   
@@ -55,7 +65,7 @@ const resolvers = {
             { $push: { savedPlaces: newPlace }},
             { new: true }
           );
-          return updatedUser;
+          return newPlace;
         }
         throw new AuthenticationError('You need to be logged in!');
       },
@@ -67,7 +77,7 @@ const resolvers = {
             { $pull: { savedPlaces: { placeId }}},
             { new: true }
           );
-          return updatedUser;
+          return placeId;
         }
         throw new AuthenticationError('You need to be logged in!');
       },

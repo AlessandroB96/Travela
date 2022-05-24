@@ -76,12 +76,20 @@ html {
 .cart {
   width: 60%;
   transition: 0.4s;
-
+  border: none;
+  background-color: transparent;
 }
+
+.itinerary-btn {
+  border: none;
+  background-color: transparent;
+}
+
 
 .cart:hover {
   filter:  brightness(0) invert(1);
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .main-container {
@@ -379,7 +387,6 @@ select {
 .map {
   margin: 10px;
   width: 50vw;
-  /* border: 2px solid black; */
   box-shadow: 0px 0px 5px black;  
   height: 67vh;
   background-color: transparent;
@@ -387,6 +394,13 @@ select {
   overflow: hidden;
 }
 
+.saved-places-title {
+  display: flex;
+  justify-content: center;
+  font-family: var(--main-font);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
 
 @media screen and (max-width: 715px) {
   .header-container {

@@ -8,6 +8,7 @@ query GetPlaces($lat: Float!, $lng: Float!) {
       name
       rating
       types
+      placeId
       location {
         lat
         lng
@@ -17,4 +18,32 @@ query GetPlaces($lat: Float!, $lng: Float!) {
 
 `
 
-export {GET_PLACES}
+const SAVE_PLACE = gql`
+mutation savePlace($placeId: String!, $name: String!, $rating: Float) {
+  savePlace(newPlace: {
+    placeId: $placeId,
+    name: $name
+    rating: $rating
+  }) {
+    name
+  }
+}
+`
+
+const FETCH_SAVED_PLACES = gql`
+query savedPlaces {
+  savedPlaces {
+    placeId
+    name
+    rating
+  }
+}
+`
+
+const REMOVE_PLACE = gql`
+mutation removePlace($placeId: String!) {
+	removePlace(placeId: $placeId) 
+}
+`
+
+export {GET_PLACES, SAVE_PLACE, FETCH_SAVED_PLACES, REMOVE_PLACE}

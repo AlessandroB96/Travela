@@ -1,47 +1,13 @@
-// import React from 'react';
-// import compare from '../images/compare.svg';
-// import search from '../images/search.svg';
-// import flight from '../images/flight.svg';
-
-// const Header = () => {
-//     return (
-//         <div className="header-container">
-
-//         <div className="logo">
-//             TRAVELA
-//         </div>
-
-
-//             <ul className="list-container">
-//                 <li className="header">
-//                     <a href="https://www.google.com" className="btn2">
-//                         <img src={search} className="cart" alt="checkout cart"></img>
-//                     </a>
-//                 </li>
-//                 <li className="header">
-//                     <a href="https://www.google.com" className="btn2">
-//                         <img src={flight} className="cart" alt="checkout cart"></img>
-//                     </a>
-//                 </li>
-//                 <li><a href="https://www.google.com" className="btn2"><img src={compare} className="cart" alt="checkout cart"></img></a></li>
-//             </ul>
-//         </div>
-//     );
-// }
-
-// export default Header;
-
 import React, {useState, useEffect} from 'react';
 import compare from '../images/compare.svg';
 import Search from '../images/search.svg';
 import {useQuery} from "@apollo/client"
 import { GET_SEARCH } from '../graphql/searchTerm';
 // import {useSearch} from "../api"
-const Header = ({onSubmit}) => {
+const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
 
     const [search, setSearch] = useState("");
-    console.log({search})
-    const [input, setInput] = useState("")
+    const [input, setInput] = useState("");
     // const {isLoading, data}  = useSearch(search);
     const {isLoading} = useQuery(GET_SEARCH, {
         variables: {
@@ -66,13 +32,22 @@ const Header = ({onSubmit}) => {
                     <input type="text" name="search" id="search" className="search-input" placeholder="search..."  value={input} onChange={(event) => setInput(event.target.value)}/>
                     <button disabled={isLoading} className="searchbtn" onClick={(e) => {
                         e.preventDefault();
-                        setSearch(input)
+                        setSearch(input);
+                        toggleMapVisible(true);
                     }}>
                         <img src={Search} className="cart" alt="search"></img>
                     </button>
                 </li>
 
-                <li><a href="https://www.google.com" className="btn2"><img src={compare} className="cart" alt="checkout cart"></img></a></li>
+                <li>
+                    <button className="btn2" className="itinerary-btn" onClick={(e) => {
+                        e.preventDefault();
+                        toggleItineraryVisible(true);
+
+
+                    }}>
+                    <img src={compare} className="cart" alt="checkout cart"></img></button>
+                </li>
             </ul>
         </div>
     );
