@@ -24,3 +24,34 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+export const SAVE_PLACE = gql`
+  mutation savePlace($newPlace: InputPlace!) {
+    savePlace(newPlace: $newPlace) {
+      _id
+      username
+      email
+      savedPlaces {
+        placeId
+        title
+        image
+        link
+      }
+    }
+  }
+`;
+
+export const REMOVE_PLACE = gql`
+  mutation removePlace($placeId: ID!) {
+    removePlace(placeId: $placeId) {
+      _id
+      username
+      email
+      savedPlaces {
+        PlaceId
+        image
+        link
+      }
+    }
+  }
+`;

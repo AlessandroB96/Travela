@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import Signup from './Signup';
 import Login from './Login';
 
-const Sidebar = ({setIsLoggedIn}) => {
-    const [loginSelected, setLoginSelected] = useState(false);
+
+const Sidebar = (props) => {
+   
+    const {
+        loginSelected,
+        setLoginSelected
+    } = props;
 
     return (
     <div className="sidebar-container">

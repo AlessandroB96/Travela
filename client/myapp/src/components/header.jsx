@@ -3,8 +3,17 @@ import compare from '../images/compare.svg';
 import Search from '../images/search.svg';
 import {useQuery} from "@apollo/client"
 import { GET_SEARCH } from '../graphql/searchTerm';
+import Auth from '../utils/auth';
 // import {useSearch} from "../api"
-const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
+const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible }) => {
+
+
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+    };
+    
+    const loggedIn = Auth.loggedIn()
 
     const [search, setSearch] = useState("");
     const [input, setInput] = useState("");
@@ -40,7 +49,7 @@ const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
                 </li>
 
                 <li>
-                    <button className="btn2" className="itinerary-btn" onClick={(e) => {
+                    <button className="btn2 itinerary-btn" onClick={(e) => {
                         e.preventDefault();
                         toggleItineraryVisible(true);
 
@@ -48,6 +57,13 @@ const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible}) => {
                     }}>
                     <img src={compare} className="cart" alt="checkout cart"></img></button>
                 </li>
+                <li>
+                    {loggedIn  &&               
+                    <a href="/" onClick={logout}>
+                    Logout
+                    </a> }
+                </li>
+
             </ul>
         </div>
     );

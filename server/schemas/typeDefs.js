@@ -52,6 +52,7 @@ type Mutation {
     savePlace(newPlace: InputPlace!): Place
     removePlace(placeId: String!): String
   }
+
 `;
 
 

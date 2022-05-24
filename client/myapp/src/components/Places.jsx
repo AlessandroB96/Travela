@@ -2,8 +2,13 @@ import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import Map from './Map';
 import {GET_PLACES, SAVE_PLACE} from "../graphql/places"
+import Auth from '../utils/auth';
 
 const Places = ({lats, toggleItinerary}) => {
+
+    const loggedIn = Auth.loggedIn();
+    const [type, setType] = useState('hotels');
+    const [rating, setRating] = useState('all');
 
     const {data, loading } = useQuery(GET_PLACES, {
         variables : {
@@ -51,13 +56,15 @@ const Places = ({lats, toggleItinerary}) => {
                     )}
                     </div>
 
-         
+        
                 </div>
             </div>
             <div className="map-container">
                 <Map lats={lats}/>
             </div>
-         {/* <Itinerary />  */}
+
+        {loggedIn && <Itinerary />}
+
                         
         </div>
     );
