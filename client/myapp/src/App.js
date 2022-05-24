@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import View from './components/View';
+import Itinerary from './components/Itinerary';
 import Places from './components/Places';
 
 import {
@@ -39,7 +40,7 @@ function App() {
   const [loginSelected, setLoginSelected] = useState(false);
   const loggedIn = Auth.loggedIn()
   const [lats, setLats] = useState([])
-  const [toggleMap, setToggleMap] = useState(true);
+  const [toggleMap, setToggleMap] = useState(false);
   const [toggleItinerary, setToggleItinerary] = useState(false);
 
 //   const logout = event => {
@@ -67,12 +68,24 @@ function App() {
                     Logout
                     </a> } */}
               <div className="main-container">
+
                 {
                   !loggedIn && <Sidebar
                   loginSelected={loginSelected}
                   setLoginSelected={setLoginSelected}/>
                 }
-                {toggleMap ? <View lats={lats}/> : null}
+      
+
+               
+                <div className="test">
+                <div className="main">
+              <div className="content-container">
+                {toggleMap ? <Places lats={lats}/> : null}
+                {toggleItinerary ? <Itinerary /> : null}
+              </div>
+        </div>
+                </div>
+
               </div>
             <Footer />
       </ApolloProvider>

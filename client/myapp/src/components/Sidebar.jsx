@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Signup from './Signup';
 import Login from './Login';
 
-const Sidebar = (props) => {
-    // const [loginSelected, setLoginSelected] = useState(false);
 
+const Sidebar = (props) => {
+   
     const {
         loginSelected,
         setLoginSelected
@@ -16,13 +16,16 @@ const Sidebar = (props) => {
             <p className="side-text">YOUR ONE STOP SHOP TO TRAVEL PLANS</p>
             {!loginSelected ? (
             <Signup 
+                
                 loginSelected={loginSelected}
                 setLoginSelected={setLoginSelected}
+                setIsLoggedIn={setIsLoggedIn}
             />
             ) : (
             <Login 
                 loginSelected={loginSelected}
                 setLoginSelected={setLoginSelected}
+
             />
             )}
         </div>
@@ -31,19 +34,3 @@ const Sidebar = (props) => {
 }
 
 export default Sidebar;
-
-// import React from 'react';
-// import Signup from './Signup';
-
-// const Sidebar = ({onLogin}) => {
-//     return (
-//     <div className="sidebar-container">
-//         <div className="sidebar">
-//             <p className="side-text">YOUR ONE STOP SHOP TO TRAVEL PLANS</p>
-//             <Signup onLogin={onLogin}/>
-//         </div>
-//     </div>
-//     );
-// }
-
-// export default Sidebar;
