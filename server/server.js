@@ -6,6 +6,7 @@ const db = require('./config/connection');
 const { authMiddleware } = require('./utils/auth');
 
 const app = express();
+app.use(express.json())
 const PORT = process.env.PORT || 3001;
 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
