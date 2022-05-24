@@ -14,6 +14,7 @@ import {
 import { useState } from 'react';
 import Header from './components/header';
 import { setContext } from '@apollo/client/link/context';
+import Auth from './utils/auth';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,10 +36,16 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [isLoggedin, setIsloggedIn] = useState(false); 
+  // const [isLoggedin, setIsloggedIn] = useState(false); 
+  const loggedIn = Auth.loggedIn()
   const [lats, setLats] = useState([])
   const [toggleMap, setToggleMap] = useState(true);
   const [toggleItinerary, setToggleItinerary] = useState(false);
+
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+};
 
   const toggleMapVisible = () => {
     setToggleMap(true);
@@ -55,9 +62,12 @@ function App() {
       <ApolloProvider client={client}>
 
             <Header onSubmit={setLats} toggleMapVisible={toggleMapVisible} toggleItineraryVisible={toggleItineraryVisible} />
-
+            {loggedIn  &&               
+                    <a href="/" onClick={logout}>
+                    Logout
+                    </a> }
               <div className="main-container">
-                {!isLoggedin && <Sidebar onLogin={setIsloggedIn}/>}
+                {!loggedIn && <Sidebar />}
                 {toggleMap ? <View lats={lats}/> : null}
               </div>
             <Footer />
