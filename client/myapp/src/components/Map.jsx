@@ -9,13 +9,13 @@ function Map({lats}) {
     const coordinates = coord;
 
     console.log({coordinates})
-    console.log('api key', process.env)
+    console.log('api key', process.env.PLACE_API)
     const API_KEY = process.env.PLACE_API
 
     return (
         <div className="map">
             <GoogleMapReact
-                bootstrapURLKeys={{ key: API_KEY }}
+                bootstrapURLKeys={{ key: 'AIzaSyCEDGDPSTZBCvk2j5LtvmTMXttONqjdfvw' }}
                 defaultCenter={coordinates}
                 center={coordinates}
                 defaultZoom={12}
