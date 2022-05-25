@@ -28,8 +28,8 @@
 
 
 # Screenshots
-* ![travela1](https://user-images.githubusercontent.com/92614793/170169815-8d138051-2458-4bb3-aa59-45319b667a5c.JPG)
-* ![travela2](https://user-images.githubusercontent.com/92614793/170169875-bb2493d1-d53d-4ecf-85a6-264ea4964926.JPG)
+ ![travela1](https://user-images.githubusercontent.com/92614793/170169815-8d138051-2458-4bb3-aa59-45319b667a5c.JPG)
+ ![travela2](https://user-images.githubusercontent.com/92614793/170169875-bb2493d1-d53d-4ecf-85a6-264ea4964926.JPG)
 
 
   
