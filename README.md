@@ -1,6 +1,6 @@
 # TRAVELA
 
-# Purpose
+# Description
 * This project intends to provide a desired trip location itinerary for the user. That information will then display the Hotels, Restuarants, Attractions, and ratings   for multiple locations using information obtained from external APIs. The APIs that we used are google Maps API & The Stripe API
 
 
