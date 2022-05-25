@@ -54,11 +54,11 @@ const Signup = (props) => {
                 <h1 className="sign-up-heading">LOGIN</h1>
                 <div className="signup">
                     <div className="email-container">
-                        <label for="email" className="c-label">EMAIL: </label>
+                        <label for="email" className="c-label" id="email">EMAIL: </label>
                         <input type="email" name="email" id="email" className="email-input" value={formState.email} onChange={handleChange} />
                     </div>
                     <div className="password-container">
-                        <label for="password" className="c-label">PASSWORD: </label>
+                        <label for="password" className="c-label" id="password">PASSWORD: </label>
                         <input type="password" name="password" id="password" className="password-input" value={formState.password} onChange={handleChange} />
                     </div>
                     <button className="btn" type="submit">

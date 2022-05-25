@@ -64,10 +64,7 @@ const Places = ({lats, toggleItinerary}) => {
             <div className="map-container">
                 <Map lats={lats}/>
             </div>
-
-        {loggedIn && <Itinerary />}
-
-                        
+              
         </div>
     );
 }

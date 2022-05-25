@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 // import {useSearch} from "../api"
 const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible }) => {
 
-
+    console.log('api key2', process.env)
     const logout = event => {
         event.preventDefault();
         Auth.logout();
@@ -59,9 +59,11 @@ const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible }) => {
                 </li>
                 <li>
                     {loggedIn  &&               
-                    <a href="/" onClick={logout}>
-                    Logout
-                    </a> }
+                    <div className="logout-container">
+                    <a href="/" onClick={logout} className="logout">
+                    LOGOUT
+                    </a>
+                    </div> }
                 </li>
 
             </ul>

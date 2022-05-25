@@ -2,8 +2,6 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 
 
-
-
 function Map({lats}) {
     console.log({lats})
 
@@ -11,7 +9,7 @@ function Map({lats}) {
     const coordinates = coord;
 
     console.log({coordinates})
-    console.log('api key', process.env.PLACE_API)
+    console.log('api key', process.env)
     const API_KEY = process.env.PLACE_API
 
     return (

@@ -81,7 +81,7 @@ function App() {
                 <div className="main">
               <div className="content-container">
                 {toggleMap ? <Places lats={lats}/> : null}
-                {toggleItinerary ? <Itinerary /> : null}
+                {loggedIn && toggleItinerary ? <Itinerary /> : null}
               </div>
         </div>
                 </div>

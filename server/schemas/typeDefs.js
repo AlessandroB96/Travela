@@ -53,8 +53,6 @@ type Mutation {
     removePlace(placeId: String!): String
   }
 
-`;
+`
 
-
-
-module.exports = typeDefs;
+module.exports = typeDefs
