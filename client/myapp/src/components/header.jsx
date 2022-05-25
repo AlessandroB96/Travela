@@ -4,10 +4,9 @@ import Search from '../images/search.svg';
 import {useQuery} from "@apollo/client"
 import { GET_SEARCH } from '../graphql/searchTerm';
 import Auth from '../utils/auth';
-// import {useSearch} from "../api"
+
 const Header = ({onSubmit, toggleMapVisible, toggleItineraryVisible }) => {
 
-    console.log('api key2', process.env)
     const logout = event => {
         event.preventDefault();
         Auth.logout();

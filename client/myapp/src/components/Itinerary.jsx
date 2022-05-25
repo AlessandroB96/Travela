@@ -12,7 +12,7 @@ const Itinerary = () => {
     })
 
     const { savedPlaces } = data || {savedPlaces : []}
-    console.log({savedPlaces})
+    
     return (
         <div className="itinerary container">
             <div className="places-container">

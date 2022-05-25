@@ -9,7 +9,7 @@
     "develop": "concurrently \"env-cmd .env.development \" \"cd server && npm run watch\" \"cd client/myapp && npm start\"",
     "install": "cd server && npm i && cd ../client/myapp && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client/myapp && npm run build"
+    "build": "GENERATE_SOURCEMAP=false env-cmd .env.production && cd client/myapp && npm run build"
   },
   "repository": {
     "type": "git",

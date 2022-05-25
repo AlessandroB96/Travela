@@ -3,13 +3,10 @@ import GoogleMapReact from 'google-map-react';
 
 
 function Map({lats}) {
-    console.log({lats})
 
     const coord = lats ? lats : {lat: 40.7812,lng: -73.9665}
     const coordinates = coord;
 
-    console.log({coordinates})
-    console.log('api key', process.env.PLACE_API)
     const API_KEY = process.env.PLACE_API
 
     return (

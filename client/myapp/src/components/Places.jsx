@@ -23,7 +23,7 @@ const Places = ({lats, toggleItinerary}) => {
     const [savePlace] = useMutation(SAVE_PLACE, {
         refetchQueries: ["savedPlaces"]
     })
-    console.log({data, loading})
+  
     const {places } = data || { places: []}
 
     return (
