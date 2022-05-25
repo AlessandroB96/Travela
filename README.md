@@ -38,5 +38,5 @@
 
 
 # Contributors
-* Frontend: Anthony Marrocco & Alessandro Belaj
-* Backend: Mehmet Berat Huyuk & Taivon Edwards
+* Front-end: Anthony Marrocco & Alessandro Belaj
+* Back-end: Mehmet Berat Huyuk & Taivon Edwards
