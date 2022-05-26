@@ -33,7 +33,7 @@
  ![travela4](https://user-images.githubusercontent.com/92614793/170396708-a54a610c-0b59-471f-a607-c34cb08d565d.JPG)
  
  # Demo Walkthrough Video
- https://drive.google.com/file/d/1F3MU_tUvmjFdTECenmzP715fqM7HAN0n/view?resourcekey
+ * https://drive.google.com/file/d/1F3MU_tUvmjFdTECenmzP715fqM7HAN0n/view?resourcekey
 
 
 # Website link via Heroku 
