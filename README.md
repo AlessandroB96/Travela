@@ -3,8 +3,6 @@
 # Description
 * This project intends to provide a desired trip location itinerary for the user. That information will then display the Hotels, Restuarants, Attractions, and ratings   for multiple locations using information obtained from external APIs. The APIs that we used are google Maps API & The Stripe API.
 
-**Features included in the App**
-
 
 # Technology Used
 * React
@@ -30,13 +28,14 @@
 
 
 # Screenshots
+ ![travela3](https://user-images.githubusercontent.com/92614793/170388004-8d9d0adb-8b34-4966-bfac-641043c6a4e4.JPG)
  ![travela1](https://user-images.githubusercontent.com/92614793/170169815-8d138051-2458-4bb3-aa59-45319b667a5c.JPG)
  ![travela2](https://user-images.githubusercontent.com/92614793/170169875-bb2493d1-d53d-4ecf-85a6-264ea4964926.JPG)
 
 
   
 # Website link via Heroku 
-* 
+* https://travela-app.herokuapp.com/
 
 
 # Contributors
