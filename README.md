@@ -35,7 +35,7 @@
 
   
 # Website link via Heroku 
-* https://travela-app.herokuapp.com/
+* http://travelamap.herokuapp.com/
 
 
 # Contributors
