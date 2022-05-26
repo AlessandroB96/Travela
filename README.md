@@ -30,10 +30,9 @@
 # Screenshots
  ![travela3](https://user-images.githubusercontent.com/92614793/170388004-8d9d0adb-8b34-4966-bfac-641043c6a4e4.JPG)
  ![travela1](https://user-images.githubusercontent.com/92614793/170169815-8d138051-2458-4bb3-aa59-45319b667a5c.JPG)
- ![travela2](https://user-images.githubusercontent.com/92614793/170169875-bb2493d1-d53d-4ecf-85a6-264ea4964926.JPG)
+ ![travela4](https://user-images.githubusercontent.com/92614793/170396708-a54a610c-0b59-471f-a607-c34cb08d565d.JPG)
 
 
-  
 # Website link via Heroku 
 * http://travelamap.herokuapp.com/
 
